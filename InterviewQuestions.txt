@@ -1,0 +1,1620 @@
+Selenium code -
+ 
+Open a browser
+Navigate to amazon.in
+Search for water bottle
+add 2nd bottle in the search result to the cart
+Goto cart and verify is it the same bottle that you added
+
+
+public class Amazon{
+
+WebDriver driver = new Chromdriver();
+
+driver.manage().window().maximize();
+driver.get("https://www.amazon.in/");
+System.out.println("Page name"+ driver.getTitle());
+
+driver.findElement(By.xpath(//*[@id='twotabsearchtextbox'])).sendKeys("WaterBottle");
+driver.findElement(By.xpath(//*[@id='nav-search-submit-button']).click();
+
+
+String bottleName = driver.findElement(By.xpath((//div[@role='listitem']//h2))[2]).getText();
+driver.findElement(By.xpath((//button[@name='submit.addToCart'])[2]).click();
+
+
+
+
+driver.findElement(By.xpath(//div[@id='nav-cart-count-container']).click();
+
+
+Response response = RestAssured.given().
+when().get(/user).
+then().
+statusCode(200).														//400
+body(JsonSchemaValidator.matchesJsonSchema(new file abc ())
+extractAll.response();
+
+==============
+
+driver.quit();
+}
+
+==================================================================================
+
+What is interface and abstract class? What is webdriver? 
+Example of method overloading and method overriding in selenium?
+java program to find sub string from string? string output question Diff between put
+and post Framework question on which you have worked.
+My advice would be prepare well with java and basics of selenium with framework.
+ 
+=====================================================================================
+
+{
+  "user": {
+    "id": 101,
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "isActive": true,
+    "roles": ["admin", "editor"],
+    "address": {
+      "street": "123 Main St",
+      "city": "New York",
+      "zipcode": "10001"
+    },
+    "preferences": null
+  }
+}
+
+
+
+1---  pojo classes
+2---  Automation script post api 
+
+//POJO CLASSES 
+
+public class User{
+
+private String name;
+private int id;
+private List<String> address;
+
+
+public User(String name, int id)
+{
+}
+
+public String getName(){
+return name;
+
+}
+
+
+
+
+public int getId()
+{
+retrun id;
+
+}
+}
+
+
+===============================================
+::::::::::::::::Automation-Script:::::::::::
+
+User user = new User("John","101");
+
+Response response = given().
+baseUrl("https://ww.google.com/xya")
+
+when().
+post(/user).
+then().extract().response;
+
+Sring email= response.jsonPath().getString(user.email);
+
+SYSO(email);
+
+===================================================
+
+@DataProvider
+public Object[][] userclass{
+
+{"user"}{"pass"},
+{"user2"}{"pass2"}
+
+return new Object[][];
+
+
+}
+
+==================================================
+
+
+
+
+char[] ch='a';
+
+int ascii=(int)ch;
+
+S.O.P("ch"+ ":is");
+
+
+
+int a=5, b=10;
+int multiple=0;
+
+for(int i=0; i<b;;i++){
+						//0,1,2,...9
+		multiple= multiple+a;
+	
+
+}
+
+SOP(multiple);
+====================
+anagram= 
+================
+
+
+String str1= "silent";
+String str2= "listen";
+
+char[] ch1= str1.toCharArray();
+char[] ch2= str2.toCharArray();
+
+Arrays.sort(ch1);
+Arrays.sort(ch2);
+
+if(Arrays.equals(ch1, ch2))
+{
+sop(yes);
+}
+
+else(
+sop(no);)
+
+===========================================
+
+String s="[{()}]" ///logic will be push open brackets and pop clocing brackets, is stack empty = valid , else no
+
+Stack<Character> stack = new Stack<>():
+
+for(char ch:s.toCharArray)
+{
+	if(ch == '[' ||ch == '{'|| ch == '(')
+	{
+		stack.push(ch);	
+	}
+	else{
+			if(stack.isEmpty)
+			{
+				sop(no)
+				returnl
+			}
+			
+			else
+			{
+			char temp =stack.pop();
+			
+			if((ch==')' && temp= '(') )||(ch=='}' && temp= '{') )|| (ch==']' && temp= '[') )
+			{
+				sop("no")
+				return;
+			
+			}		
+			}
+			
+			if(stack.isEmpty)
+			{
+			sop(valid);}
+			else(sop(no);)
+	
+	}
+
+
+}
+
+
+====================================================================================================
+<!Doctype suit ect......................>
+<suite name= "XYZ">
+<test name= 'test'>
+<classes >
+<class name= "com.etc.testclass">
+</classes>
+
+
+
+</test>
+
+</suite>
+
+==================================================
+2 table first table is employee , and second table is emp salary , 
+
+now both tablea are having 2 columns only id , now the remaining column have employee name only
+employye > id , name 
+emp salary >id, salary
+
+find? write query name of the employy who is getting minimum salary
+
+SELECT e.name FROM Employee table JOIN emp_salary WHERE e.salary(
+
+SELECT MIN(salary) FROM EMP_sALARY))
+
+======================================================================
+Opens a URL
+Clicks the "Click Here" link which opens a new tab
+Switches to the new tab
+Verifies the heading on the new tab reads "New Window"
+Closes the new tab
+Switches back to the parent tab
+Verifies the parent tab still shows the original page heading "Opening a new window"
+Write steps, step definitions with implementations.
+
+========================================================================================
+
+Chromedriver driver = new Chromedriver();
+driver.get("www.google.com");
+
+String ExceptecedTitle = "www.gogglchils.com";
+String ExceptecedTitleParent = "www.gogglchilds.com";
+
+
+String tab= driver.findElement(By.xpath("click here ")).click();
+String set<> parent=  driver.getWindowHandles();
+driver.getWindow(parent);
+
+driver.switchTo(childWindow);
+
+String titlePage= driver.getTitle();
+AssertTrue(ExcpectedTitle, titlPage);
+
+driver.close();
+
+driver.switchto(parent);
+String ParenrtitlePage= driver.getTitle();
+AssertTrue(ExcpectedTitleParent, ParenttitlPage);
+
+================================================
+
+Clicks the "Click for JS Alert" button
+Switches to the alert and accepts it
+Verifies the result message below reads: "You successfully clicked an alert"
+Prints PASS or FAIL to the console based on the assertion
+
+
+WebElement we = driver.findElements(By.xpath("JS button"));
+JavaScriptExecutor js= new JavaScriptExceutor
+js.click("scrollIntoView",we);
+String str= "You successfully clicked an alert";
+
+Alert alert = ??
+alert.accept();
+
+WebElement text = driver.findElements(By.xpath("AlertText")).getText();
+AssertTrue(str,text);
+
+if(str.equlaTo(text))
+{
+System.out.println("PASS");
+}
+else()
+{
+System.out.println("FAIL");
+}
+
+
+==================================================
+
+class Solution {
+    public String reverseStr(String s, int k) {
+
+        StringBuilder result = new StringBuilder();
+
+        for(int i = 0; i < s.length(); i += 2*k) {
+
+            int end = Math.min(i + k, s.length());
+
+            // reverse first k characters
+            String part = new StringBuilder(s.substring(i, end)).reverse().toString();
+            result.append(part);
+
+            // append next k characters unchanged
+            if(i + k < s.length()) {
+                int nextEnd = Math.min(i + 2*k, s.length());
+                result.append(s.substring(i + k, nextEnd));
+            }
+        }
+
+        return result.toString();
+    }
+}
+
+2-3 - sonu.rawat?
+
+
+Given an integer array nums, return all unique triplets [a, b, c] such that:
+
+
+a + b + c = 0
+
+The solution must not contain duplicate triplets.
+
+Example
+
+
+Input:  [-1, 0, 1, 2, -1, -4]
+Output: [[-1, -1, 2], [-1, 0, 1]]
+
+
+=======================================================================
+
+https://fakestoreapi.com/products
+This api will provide the list of products in response.
+
+Task 1 : Provide the test cases to test the end to end api functionality. If possible please automate one test case end to end.
+
+Task 2 : Create a method which will accept the input as productCategory and will list out all the product details belongs to category
+Example Input : men’s clothing
+Example Output : 
+[
+
+  {
+    "id": 1,
+    "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+    "price": 109.95,
+    "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+    "category": "men's clothing",
+    "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
+    "rating": {
+      "rate": 3.9,
+      "count": 120
+    }
+  }
+
+] Task 3 : Create a method which will accept product_id/product_title and will return the product price, category, description and rating.
+Example Input : Id as 1 or "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops"
+Example output :  {
+    "price": 109.95,
+    "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+    "category": "men's clothing",
+    "rating": {
+      "rate": 3.9,
+      "count": 120
+    }
+
+}
+Technical Interview :: Kanika Chaudhary
+=====================================================================================================================
+[12:09 pm, 29/1/2026] My New Number: String/Array Manipulation:
+
+"Write a function to find the most frequent character in a string."
+
+"Given an array of logs, filter out errors and group them by error type."
+
+"Flatten a nested JSON object into a single-level key-value pair." (Very common for API testing).
+
+Practical Automation Logic:
+
+"Write a retry mechanism function that takes a promise and retries it 3 times with exponential backoff."
+
+"How would you validate a sorted list on a UI without scraping every single element?"
+[12:09 pm, 29/1/2026] My New Number: Automation Basics 3. Selectors & Flakiness: * "The element ID changes every time the page loads. How do you locate it reliably?" * "Explain the difference between Implicit Wait, Explicit Wait, and Fluent Wait. Which one do you use and why?" 4. Framework knowledge: * "Why did you choose your current framework (Playwright/Cypress/Selenium)? What are its limitations?" * "Explain the Page Object Model (POM). usage in TypeScript."
+[12:09 pm, 29/1/2026] My New Number: API & Microservices Testing 5. Async/Webhook Testing (Critical for HighLevel): * "We send a webhook when a lead is created. It takes 2-30 seconds to arrive. How do you automate a test for this?" * "How do you test a system that relies on message queues (like SQS/Kafka)? You can't just 'wait' for a UI response." 6. Data Strategy: * "You need to run 500 tests in parallel. How do you handle test data so they don't collide (e.g., two tests trying to edit the same user)?" * "Do you mock 3rd party APIs (like Stripe/Twilio) or hit the real sandbox? Why?"
+
+System Design for QA 7. The "Workflow Builder" Scenario: * "HighLevel has a drag-and-drop workflow builder. How would you design an automation strategy for it? (Hint: Don't say 'automate via UI'. The answer should…
+[12:09 pm, 29/1/2026] My New Number: "A developer refuses to fix a bug because 'it's not reproducible.' What do you do?"
+
+"Tell me about a time you broke production. How did you fix it, and how did you prevent it from happening again?"
+[12:09 pm, 29/1/2026] My New Number: "How do you handle a junior SDET who writes messy, unmaintainable code? How do you give feedback?"
+[12:09 pm, 29/1/2026] My New Number: Design Patterns: Page Object Model, Singleton, Factory Pattern.
+
+Testing Strategies: Pyramid of Testing (Unit vs. Integration vs. E2E).
+
+Network: HTTP Status Codes (200 vs 201, 401 vs 403, 500 range), Headers, JSON parsing.
+
+TypeScript: Interfaces vs Types, Async/Await, Promises.
+[12:09 pm, 29/1/2026] My New Number: HighLevel is "AI-Powered." If you can mention using AI to generate test data or parse logs during your answers, would be great !
+[10:38 am, 18/2/2026] My New Number: String/Array Manipulation:
+
+"Write a function to find the most frequent character in a string."
+
+"Given an array of logs, filter out errors and group them by error type."
+
+"Flatten a nested JSON object into a single-level key-value pair." (Very common for API testing).
+
+Practical Automation Logic:
+
+"Write a retry mechanism function that takes a promise and retries it 3 times with exponential backoff."
+
+"How would you validate a sorted list on a UI without scraping every single element?"
+[10:38 am, 18/2/2026] My New Number: Automation Basics 3. Selectors & Flakiness: * "The element ID changes every time the page loads. How do you locate it reliably?" * "Explain the difference between Implicit Wait, Explicit Wait, and Fluent Wait. Which one do you use and why?" 4. Framework knowledge: * "Why did you choose your current framework (Playwright/Cypress/Selenium)? What are its limitations?" * "Explain the Page Object Model (POM). usage in TypeScript."
+[10:38 am, 18/2/2026] My New Number: API & Microservices Testing 5. Async/Webhook Testing (Critical for HighLevel): * "We send a webhook when a lead is created. It takes 2-30 seconds to arrive. How do you automate a test for this?" * "How do you test a system that relies on message queues (like SQS/Kafka)? You can't just 'wait' for a UI response." 6. Data Strategy: * "You need to run 500 tests in parallel. How do you handle test data so they don't collide (e.g., two tests trying to edit the same user)?" * "Do you mock 3rd party APIs (like Stripe/Twilio) or hit the real sandbox? Why?"
+
+System Design for QA 7. The "Workflow Builder" Scenario: * "HighLevel has a drag-and-drop workflow builder. How would you design an automation strategy for it? (Hint: Don't say 'automate via UI'. The answer should…
+[10:38 am, 18/2/2026] My New Number: "A developer refuses to fix a bug because 'it's not reproducible.' What do you do?"
+
+"Tell me about a time you broke production. How did you fix it, and how did you prevent it from happening again?"
+[10:38 am, 18/2/2026] My New Number: "How do you handle a junior SDET who writes messy, unmaintainable code? How do you give feedback?"
+[10:38 am, 18/2/2026] My New Number: Design Patterns: Page Object Model, Singleton, Factory Pattern.
+
+Testing Strategies: Pyramid of Testing (Unit vs. Integration vs. E2E).
+
+Network: HTTP Status Codes (200 vs 201, 401 vs 403, 500 range), Headers, JSON parsing.
+
+TypeScript: Interfaces vs Types, Async/Await, Promises.
+[10:38 am, 18/2/2026] My New Number: HighLevel is "AI-Powered." If you can mention using AI to generate test data or parse logs during your answers, would be great !
+
+====================================================================================================
+
+1)What are different types of waits?
+2)What is difference between implicit and explicit wait?
+3)What are different object locators in selenium?
+4)Which object locator is preffered?
+5)what is difference between hash map and hash table?
+6)What is interface?
+7)OOPS Concepts
+8)what is difference between interface and abstract class?
+9)Exception handling
+10)how to reverse the words in the string?eg: i like program language java to java language program like i
+11)Using hash map,how to find no of occurences of a character in the string?
+12)can main method be over loaded,can main method overided
+13)which access modifiers can be used in interface?
+14)access modifiers in java and its scope?
+15)What is difference between scenario and scenario outline?
+16)can main method be overloaded?
+17)can main method be overrided?
+********************
+
+How about asking the same questions, but in a slightly different way? 
+These would initiate a discussion that can go deep and help the interviewer truly assess the knowledge of the interviewee as far as test automation skills are concerned. 
+
+1. Why use waits in Selenium? What are the pros and cons of using Implicit and Explicit waits?
+2. What would be your preferred locators to interact with UI elements, and why? What would you do if your preferred locators are not available?
+3. Have you used a Hash Map in your automation? If yes, could you cite a few instances where you have used it?
+4. In what situation would you use an Interface, and in what situations would you avoid using it?
+5. In what situation would you use an Abstract class over an Interface, and why?
+6. What are the common pitfalls of using an Interface in test automation? Are there any alternatives that you can think of?
+7. Could you give some practical examples where you used OOP concepts in your automation? Please explain how you would make your code efficient and scalable by applying OOP concepts.
+8. What are the benefits of using custom exceptions in test automation? Could you give an instance where the improper use of exceptions caused undesired issues in your automation?
+9. How would you use access modifiers in your test automation to restrict access to important resources and avoid unintended uses and manipulations?
+10. In what situation would you use a Scenario Outline as opposed to a Scenario?
+
+=====================================================================================================================================================================================================================================================QA must have answer of all the below questions:
+
+1)What are different types of waits?
+2)What is difference between implicit and explicit wait?
+3)What are different object locators in selenium?
+4)Which object locator is preffered?
+5)what is difference between hash map and hash table?
+6)What is interface?
+7)OOPS Concepts
+8)what is difference between interface and abstract class?
+9)Exception handling
+10)how to reverse the words in the string?eg: i like program language java to java language program like i
+11)Using hash map,how to find no of occurences of a character in the string?
+12)can main method be over loaded,can main method overided
+13)which access modifiers can be used in interface?
+14)access modifiers in java and its scope?
+15)What is difference between scenario and scenario outline?
+16)can main method be overloaded?
+17)can main method be overrided?
+
+**********
+1. Why use waits in Selenium? What are the pros and cons of using Implicit and Explicit waits?
+2. What would be your preferred locators to interact with UI elements, and why? What would you do if your preferred locators are not available?
+3. Have you used a Hash Map in your automation? If yes, could you cite a few instances where you have used it?
+4. In what situation would you use an Interface, and in what situations would you avoid using it?
+5. In what situation would you use an Abstract class over an Interface, and why?
+6. What are the common pitfalls of using an Interface in test automation? Are there any alternatives that you can think of?
+7. Could you give some practical examples where you used OOP concepts in your automation? Please explain how you would make your code efficient and scalable by applying OOP concepts.
+8. What are the benefits of using custom exceptions in test automation? Could you give an instance where the improper use of exceptions caused undesired issues in your automation?
+9. How would you use access modifiers in your test automation to restrict access to important resources and avoid unintended uses and manipulations?
+10. In what situation would you use a Scenario Outline as opposed to a Scenario?
+
+===================================================================================================================================================================================================
+
+est Automation Questions - Experienced QA Engineers: 
+
+Q. How to use method overloading and overriding?
+Q. How to differentiate between an abstract class and an interface?
+Q. How to manage the absence of multiple inheritance support in abstract classes?
+Q. How do you utilize constructors?
+Q. How to work with different types of collections?
+Q. How to distinguish between an array list and a hash map?
+Q. How do you effectively handle windows pop-ups?
+Q. How to implement different types of waits?
+Q. How to utilize getWindowHandle and getWindowHandles effectively?
+Q. How to handle various types of exceptions in your project?
+Q. How do you use TestNG annotations in your testing process?
+Q. How to write code for executing a single test case multiple time?
+Q. How do you repeatedly run a single test case in your testing suite?
+Q. What challenges did you encounter in your project, and how did you address them?
+Q. How do you make use of BeforeClass and AfterTest TestNG annotations in your testing framework?
+Q. How do you generate reports, and what is the process behind it?
+Q. Can you explain the code responsible for generating reports in your framework?
+Q. How do you approach writing Java programs for logic, such as reversing a string or identifying repeated numbers in a sequence?
+Q. How do you handle hooks in Cucumber during your testing scenarios?
+Q. How do you craft a Cucumber feature for your specific testing requirements?
+Q. Can you elaborate on the design and implementation of your testing framework?
+Q. How do you pass data effectively within your testing framework?
+Q. Are their specific practices related to Agile ceremonies that you find beneficial in your testing processes?
+
+
+==========================================================================================================================
+
+Question 1: Length of Longest Substring (Sliding Window)
+
+Given a string s, find the length of the longest substring without repeating characters.
+
+Input:  "abcabcbb"
+Output: 3
+Explanation: The answer is "abc", with length 3.
+
+
+Questions 2:- Question 2: Extract Valid Hashtags
+
+You need to implement the function extractHashtag.
+
+The function should take a single string text and return a list of all valid hashtags found.
+
+Rules for a valid hashtag:
+	•	Must start with #
+	•	Must have more than 3 characters in total
+	•	Can contain only letters, digits, and underscore (_) after #
+
+Input:  "Hello #ab #java #phonepe_test #1234"
+Output: ["#java", "#phonepe_test",]
+
+Phonepe DSA question
+=========================================================================================================================
+
+
+What are your roles and responsibilities in your day-to-day work?
+	2.	What enhancements can be done in your automation framework?
+	3.	How do you handle a situation where a button is clicked but the next page takes time to load?
+	4.	How do you handle loaders or spinners in UI automation?
+	5.	How do you capture screenshots on test failure?
+	6.	Which TestNG listeners have you used?
+	7.	How do you implement screenshot capture using TestNG listeners?
+	8.	What is XPath and when do you use it?
+	9.	What is the difference between absolute and relative XPath?
+	10.	How do you handle dynamic XPath?
+	11.	What XPath functions have you used?
+	12.	Write an XPath for the Flipkart website to select the 8–16 GB RAM checkbox using parent–sibling relationship.
+	13.	How do you perform performance testing?
+	14.	What types of performance testing have you done?
+	15.	How do you simulate concurrent users?
+	16.	Which performance testing tools have you used?
+	17.	How do you test REST APIs using Rest Assured?
+	18.	What validations do you perform in API testing?
+	19.	How do you handle API authentication?
+	20.	What is schema validation and why is it needed?
+	21.	How do you implement JSON schema validation?
+	22.	What is your CI/CD pipeline flow?
+	23.	How do you trigger smoke and regression tests in CI?
+	24.	What test cases would you write for the Speaker payment announcement feature, and how would you evaluate and choose the best vendor when multiple vendors are involved?
+
+
+
+===============================================================================================================================
+
+
+1. REST / API
+	1.	REST Architecture
+	2.	Non-functional testing for Amazon app
+	3.	How do you improve Appium execution in Maven?
+	4.	What is Maven and its significance in test automation?
+
+⸻
+
+2. Mobile / Appium
+	5.	How do you make sure WebView is also tested in Appium?
+	6.	How do you test App WebView?
+	7.	Driver related question (context switching, setup, etc.)
+
+⸻
+
+3. TestNG / Framework
+	8.	You have 150 English and 150 Chinese test cases —
+If app language is detected after driver launch,
+how will you execute only that language’s tests using TestNG?
+
+Deutsche Telekom- 5.7 years of experience
+
+
+=============================================================================================
+
+
+[2:02 pm, 19/11/2025] Ishmeet Kaur: Program to check if linked list is circular
+Progarm to find number in areay in least iteration 
+
+Status code difference between 502 and 504
+
+Kafka
+
+Why rest assured is stateless 
+
+Mongo commad how to check when we need to check 3-4 parameters 
+
+Mongo query to write count of something
+
+Current company roles and responsibilities
+
+
+Your project will go live you need to test what if 1000s of user filled the review time ? How can you test that
+[2:03 pm, 19/11/2025] Ishmeet Kaur: Occurrence of characters in string 
+Before after test and series of all methods
+[2:03 pm, 19/11/2025] Ishmeet Kaur: Data providers
+[2:03 pm, 19/11/2025] Ishmeet Kaur: Test ng
+[2:03 pm, 19/11/2025] Ishmeet Kaur: Ds normal questions
+[2:04 pm, 19/11/2025] Ishmeet Kaur: Series of calls that will be hit if you open a website add 3 items in cart then remove one from cart to Wishlist
+And then payment
+[2:05 pm, 19/11/2025] Ishmeet Kaur: Get put post kha kha kon konsi call hit hogi kis kis step mai
+[2:05 pm, 19/11/2025] Ishmeet Kaur: Basic serialisation deserialisation
+[2:05 pm, 19/11/2025] Ishmeet Kaur: Current framework folder structure
+
+
+=================================================================================================
+
+
+Parallel thread counting 
+Parallel execution 
+Framework automation jisme kaam krrhe ho
+Before test after test
+Test ng data provider 
+Ds ke question 
+
+
+
+
+=================================================================================
+
+1. Tell me about a time you led a flaky test/code cleanup across teams. What did you do?
+2. How do you coach juniors on automation design?
+3. How do you prioritise automation vs manual testing for a release?
+4. Design an automation framework for AlgoSec web UI (scale for CI/CD + multiple environments): Key points to mention: modular POM, test layer vs page layer, env config, parallel runs, retry strategy, CI gating (smoke on PR, regression nightly), storage of artifacts, test tagging, service virtualization for network dependencies.
+5. How do you reduce flakiness in UI tests? : Key points: robust locators, explicit waits, avoid assertions during navigation, stable test data, isolation (fresh env or mocks), run in parallel on stable infrastructure.
+6. How to test firewall/policy changes across environments? : Key points: API-first tests, integration tests with emulated network flows, capture and assert rule propagation, use service virtualization if real network is costly.
+7. Explain TestNG annotations and how you'd structure suites for smoke, sanity, regression.
+8. How do you implement retries in TestNG?
+9. How to handle dynamic locators?
+10. How do you validate an API that applies firewall rules and returns async status?
+11. Tools & practices? : RestAssured / HTTP clients + JSON schema validation, contract tests, negative cases, auth token rotation, rate limits.
+12. How to test multi-tenant/role based API? : Create tokens for roles, test access control, data isolation (test tenants), automated teardown.
+13. Design a test pyramid for a microservices product where third-party network devices are expensive/unavailable. : Answer: heavy on unit & contract tests; API integration with service virtualization; end-to-end on staging only; synthetic traffic; smoke in CI gating; metrics & alerting.
+14. Find duplicate in array, or pair sum target (hash map).
+15. Sliding window — max subarray of size k.
+16. String manipulations — reverse words, palindrome checks.
+17. Explain time/space complexity.
+18. SQL: Join tables to fetch test results per run, or a query to aggregate failures by test.
+19. What is a firewall rule? How would you test a rule that blocks port 22?
+20. Explain TCP three-way handshake / what is a packet capture?
+21. Describe a high-impact automation you shipped. Result?
+22. How do you convince product/eng to fix flaky tests?
+23. Explain how you’d create a cross-env test suite that reuses the same tests for dev/stage/prod.
+24. Write a Java method to find the first non-repeated character in a string.
+25. Design a retry strategy for flaky UI steps.
+26. What are the main characteristics of a good automation developer?
+	2.	What are the key KPIs of a QA engineer or automation tester?
+	3.	What are the common exceptions in Selenium?
+	4.	What is a static variable in Java and when do we use it?
+	5.	What is the difference between @BeforeTest and @BeforeMethod in TestNG?
+	6.	How do you find errors or bugs in a Java code snippet?
+	7.	What is a Page Factory in Selenium and how is it different from Page Object Model?
+	8.	What is the purpose of @BeforeSuite and @BeforeTest annotations?
+	9.	What is a BDD framework and what are its main components?
+	10.	What are hooks in Cucumber and when do we use them?
+	11.	What is the difference between git fetch and git pull?
+	12.	How do you generate test reports and include screenshots in Extent Reports?
+	13.	How do you handle configuration using a properties file in your framework?
+	14.	What is the bug life cycle in software testing?
+	15.	What are the key steps in test automation framework design?
+	16.	What are the key responsibilities of an automation tester in a sprint?
+	17.	How do you decide which test cases to automate?
+	18.	How do you handle dynamic web elements in Selenium?
+	19.	How do you validate API responses in automation testing?
+	20.	How do you handle parallel execution in TestNG?
+	21.	What are the challenges you faced while automating tests?
+	22.	What are the advantages and disadvantages of automation testing?
+	23.	What is the role of CI/CD in test automation?
+	24.	How do you maintain and version-control your automation framework?
+	25.	How do you ensure your automation framework is scalable and reusable?
+	
+	
+	
+	==============================================================================================
+	✅ Java / OOPs
+	1.	Abstract class vs Interface
+	2.	Checked vs Unchecked Exceptions
+	3.	Can we create object of abstract class?
+	4.	Immutable vs Final
+	5.	Tricky Java output questions
+	6.	Count words in a String (without built-in methods)
+	7.	Count frequency of each word in a String (e.g., Java 2, is 1, great 1)
+	8.	Remove duplicate integers from an array
+	9.	Find second highest number in an array
+
+⸻
+
+✅ Selenium / Testing
+	10.	Page Factory
+	11.	Difference between @BeforeSuite and @BeforeTest (TestNG)
+	12.	BDD Framework
+	13.	Hooks in Cucumber
+
+⸻
+
+✅ Git
+	14.	git fetch (difference from git pull)
+
+⸻
+
+✅ Extra Tricky Java Questions Discussed
+	15.	Can we overload main() method?
+	16.	What if return is inside finally block?
+	17.	String pool vs new String()
+	18.	Static block execution order
+	19.	Increment operator tricky output questions
+	
+	
+	========================================================================================
+	
+	[4:32 pm, 6/11/2025] Kanika: New corp 5+ years
+
+1. API & Architecture and appium and its architecture.
+
+	•	What is the architecture of an API?
+	•	What is the UDID parameter in API requests?
+	•	If backend is not ready, how will you mock endpoints from frontend?
+	•	Explain OAuth Authentication (flow and purpose).
+	•	What is the syntax of OAuth in API calls?
+	•	How to perform GET request in Rest Assured?
+	•	How to implement OAuth authentication in Rest Assured?
+	•	Explain Query Parameters in REST API (Example: Users, CPM, Newsletter, Bulletin, SDA File, Feature, Display Order, Main Graph, News API etc.)
+	•	Explain JWT Tokens (structure, usage, difference from OAuth).
+
+⸻
+
+2. TestNG & Selenium Framework Questions
+	•	Difference between @BeforeMethod and @BeforeTest in TestNG.
+	•	Explain the Bug / Defect Life Cycle.
+	•	How do you generate test report and email it to the team?
+	•	How do you capture screenshots and attach them in Extent Reports?
+	•	Do you use a Properties file in your automation framework?
+	•	What do you store in it and how do you read it?
+
+⸻
+
+3. Java / Coding Logic Question
+	•	Take your name → Find repeated characters and display character with occurrences.
+(Example solved using HashMap.)
+[4:32 pm, 6/11/2025] Kanika: Public sapient
+
+
+✅ Java / OOPs
+	1.	Abstract class vs Interface
+	2.	Checked vs Unchecked Exceptions
+	3.	Can we create object of abstract class?
+	4.	Immutable vs Final
+	5.	Tricky Java output questions
+	6.	Count words in a String (without built-in methods)
+	7.	Count frequency of each word in a String (e.g., Java 2, is 1, great 1)
+	8.	Remove duplicate integers from an array
+	9.	Find second highest number in an array
+
+⸻
+
+✅ Selenium / Testing
+	10.	Page Factory
+	11.	Difference between @BeforeSuite and @BeforeTest (TestNG)
+	12.	BDD Framework
+	13.	Hooks in Cucumber
+
+⸻
+
+✅ Git
+	14.	git fetch (difference from git pull)
+
+⸻
+
+✅ Extra Tricky Java Questions Discussed
+	15.	Can we overload main() method?
+	16.	What if return is inside finally block?
+	17.	String pool vs new String()
+	18.	Static block execution order
+	19.	Increment operator tricky output questions
+	
+	================================================================================
+	
+	
+	They gave a code piece (that was sorting algo insertion or selection not sure) and asked me to do dry run 
+
+Challenges i face during automation 
+
+
+Exceptions I faced during automation 
+
+Some basic selenium and java question 
+
+Crud methods for api
+
+
+=======================================================================================
+
+
+Write code for leetcode question which is validbrackets
+
+Dataprovider and factory annotation in testng
+
+
+In the API automation, what approach do you use to parse the request and response?
+
+
+Write pojo class for with rest assured 
+{
+  "id": 101,
+  "name": "John Doe",
+  "email": "john@example.com",
+  "address": {
+    "street": "Main St",
+    "city": "New York"
+  }
+} 
+
+
+Authentication and authorisation 
+
+
+Real time examples as well
+
+
+==================================================================================================
+
+
+Free charge
+Rest Assured - post code request and response
+JAVA code -  String str="a2b3c4";
+STLC
+Fluent wait
+Exceptions in java
+Types of constructor
+Serialization and deserailzation
+Types of window handles
+Agile methodolgy
+Screenshot method
+Arraylist and linkedlist difference
+how to handle expections in java 
+try catch 
+can we have multiple catch blocks
+can we have multiple try blocks
+how to fetch all keys from json , if they all have the same key name, rest assured
+how to find value of specific key from json , rest assured
+POJO class in java
+
+
+=========================================================================================\
+
+IRIS
+Prime number code 1-100
+Singleton class
+Serialization and deserialisation 
+Ci cd pipeline
+
+
+==================================================
+
+Freecharge
+DSA Round
+3 DSA questions 
+
+1- //Given an array arr[] and a positive integer k, the task is to find the k most frequently occurring elements from a given array.
+// Given a string s, find the length of the longest substring without repeating characters.
+ 
+// Example 1:
+// Input: s = "abcabcbb"
+// Output: 3
+// Explanation: The answer is "abc", with the length of 3.
+// Example 2:
+// Input: s = "bbbbb"
+// Output: 1
+// Explanation: The answer is "b", with the length of 1.
+// Example 3:
+// Input: s = "pwwkew"
+// Output: 3
+// Explanation: The answer is "wke", with the length of 3.
+// Notice that the answer must be a substring, "pwke" is a subsequence and
+
+
+
+2- ANAGRAM
+
+
+3- Given a integer array arr[] and a numver k , retuen the top K most frequent elements , including their duplicates in the result
+arr={1,3,2,1,4,1,3,3,2};
+k=2;
+
+
+=======================================================================================================
+
+
+[10:34 am, 5/7/2025] Ishmeet Kaur: Hanjii shayd friend nai diya tha puch leti hu
+[10:34 am, 5/7/2025] Ishmeet Kaur: Uska ho bhi gya tha
+[10:34 am, 5/7/2025] Ishmeet Kaur: Shayd but join ni kiya
+[11:08 am, 5/7/2025] Ishmeet Kaur: Rest aaaured pe post call ka code
+[11:08 am, 5/7/2025] Ishmeet Kaur: Status validation
+[11:08 am, 5/7/2025] Ishmeet Kaur: How to scale rest assured framework
+[11:08 am, 5/7/2025] Ishmeet Kaur: Aiklours reveres string without reversing vowel
+[11:08 am, 5/7/2025] Ishmeet Kaur: Find third max value in array
+[11:08 am, 5/7/2025] Ishmeet Kaur: A2d3f7 print this string in AAdddfffffff
+[11:08 am, 5/7/2025] Ishmeet Kaur: Or selenium me upload code
+[11:08 am, 5/7/2025] Ishmeet Kaur: How to handle team
+[11:08 am, 5/7/2025] Ishmeet Kaur: If app has a critical bug and your team members missed it
+[11:08 am, 5/7/2025] Ishmeet Kaur: How you will handle
+[11:08 am, 5/7/2025] Ishmeet Kaur: Usne lead ke liye diya tha
+
+Bhut tuff tha
+
+
+==========================================================================================================
+
+
+Ques 1:   //input = "Tomorrow"
+  //output= "T&m&&rr&&&w"
+  
+Ques 2: input={100="java",101="hello",102="apac",105="emea"}
+
+add in hashmap and print map and key separately
+
+Ques3: Encalpsulation code
+
+Ques 4: Xpath to find all hit items from amazon
+
+Ques 5: differnce between list and set
+
+
+Public sapient interview questions round 1
+
+
+=======================================================================
+	Which design pattern is used?
+framework structure
+Hierarchy used
+Webdriver methods
+utils like - take screenshot
+Jenkins Integration
+Listeners used 
+Describe OOPS concept used in framework and example
+maven command use - mvn clean test - what clean text does here ?
+Singleton Pattern and its usage 
+How to perform scrolling in App or web
+How we can perfrom keyboard Action on App 
+What is Webdriver
+Difference b/w sel3 and sel4
+Handle pop ups, open window[3] among all the windows opened
+Difference between implicit, explicit, and fluent waits.
+How to take a screenshot on test failure using Selenium?
+
+
+Reverse a string without reversing special characters
+Input : String s = "T@est$*ing!"
+Output : g@nit$*seT!
+Time Complexity, Space Complexity
+Move Zeroes to end - Input: arr[] = [1, 2, 0, 4, 3, 0, 5, 0]
+Output: [1, 2, 4, 3, 5, 0, 0, 0] 
+Find the missing number in an array without sorting the array
+Input : arr = [1,2,4,5,6]
+Output : 3
+Time Complexity, Space Complexity
+Input  "Help others"
+Output: sreh topleH
+Explanation : Reversing the characters without spaces "srehtopleH" and inserting space at original place"sreh topleH"
+Given an integer array nums , rotate the array to the right by k steps, where k is non-negative.
+ Example 1: Input: nums = [1,2,3,4,5,6,7], k = 3 Output: [5,6,7,1,2,3,4]
+ 
+
+
+
+
+
+
+What is a static class and static block, significance of static keyword
+Difference b/w String and StringBuffer
+Difference b/w final and finally keywords
+Exceptions - types with complile time and run time examples
+Interface vs class
+Inheritence and how to achieve multiple inheritance
+Use of super and this keyword
+What are constructors, usage?
+
+Open Flipkart , Hover to Fashion category -> Hover Kids -> Find xpath for Infant Wear
+User lands to flipkart - search shoes - lands to shoes page - add to bag , Write positive and negative testcases
+
+
+Difference b/w Authorization and Authentication, types of Auths
+User is getting 403 in response, what is the possible cause
+Update a field in db , which http method will be used?
+Code for post request against any endpoint in java
+Difference b/w headers and parameters
+Difference between cache and cookie
+Why do we use Object Mapper
+What are joins
+Ask API limiting 429 response code - Give an sceenario and let them candidate decide its 429 error
+
+
+roation of array - check , 
+rrst api - nested array - json value - will check - done 
+optimisaion of code - done
+api chaing - will check -done
+oops code , in selenium -done 
+ci/cd pipeline -youtbe -done
+value set repo s
+flipkart site- youtube
+ancheter , product add to cart code - done
+
+## 🔹 6. API Fundamentals (HTTP)
+
+* GET, POST, PUT
+* 302 status code
+* Difference between Path and Query Parameters (with example)
+
+---
+
+## 🔹 7. Rest Assured – Basics
+
+* How to send a GET request using Rest Assured?
+* What import statement is required for Rest Assured?
+* How to verify status code in Rest Assured?
+* Difference between `given()`, `when()`, `then()`
+* How to log response only when error occurs?
+
+---
+
+## 🔹 8. Rest Assured – Response Handling
+
+* Extract single field using:
+
+  * Response
+  * JSONPath
+  * XMLPath
+* Postman code to fetch value of a particular node
+* How to check specific item in response collection (Matchers)
+
+---
+
+## 🔹 9. Rest Assured – Advanced Handling
+
+* Mask header information
+* Handle cookies
+* Handle dynamic data or parameters
+* Handle dynamic status codes
+* Handle timeouts and retries
+* Download file using Rest Assured
+* Handle form parameters and multipart (file upload)
+* Common exceptions in Rest Assured
+* Common pitfalls in Rest Assured and solutions
+
+---
+
+## 🔹 10. Rest Assured – Framework & Design
+
+* Explain Rest Assured framework used in previous org
+* Handling test data:
+
+  * POJO
+  * Excel
+  * Config files
+  * HashMap
+* ResponseSpecification – use & benefit
+* Reporting in Rest Assured
+* Parallel execution of Rest Assured tests (TestNG + XML)
+
+---
+
+## 🔹 11. API Security & Authentication
+
+* Passing username & password in header securely
+* Authentication & authorization:
+
+  * Basic
+  * OAuth
+  * Digest
+  * Custom tokens
+
+---
+
+## 🔹 12. API Chaining & End-to-End Scenarios
+
+* Explain API chaining with example (End-to-End flow)
+* Handling dependencies between APIs
+
+
+==============================================================
+
+
+Webdriver driver=new Chromdriver();
+driver.maximize();
+List<WebElement> price= driver.findElements(BY.xpath(//h6[@data-testid="pricing"])).getText();
+
+int temp=0;
+for (int i=0; i<price.list; i++)
+{
+	if(temp>price[i])
+	{
+		temp=price[i];				0>6389 =temp , 7645
+	}
+	else
+	{
+		price[i+1];					6389<7645 , temp 7645
+	}
+}
+
+Syso(temp);
+
+
+Apart from this 
+
+
+(//h6[@data-testid="pricing"]).first();
+	
+	
+=========================================================================
+
+1- scanerio and scenario outline
+2- agile
+3- singleton 
+4- constructor
+5- collection used in framework
+6- 
+
+1. How to handle cookies in selenium? - driver.manage().getCookies();
+2. Can we create static class? What is static keyword? - no we can not create static class
+3. what is clean code?
+4. Path and query parameter what are these and which is optional?- Path parameters are part of the URL path and are required to specify a resource, while query parameters are optional and used to filter or sort data.
+5. Java 8 streams?
+6. Background keyword, Scenario Outline, Scenario, Data Table?
+7. Where do you run your test cases?
+8. Which version of selenium you have used
+9. Window A,B,C,D, How to switch to C and close it?
+10. How to handle dropdown?(By select class and alternate is by using findElements?
+11. Write a code using HashMap
+Brian – 21
+Lee – 22
+Cathe – 45
+Using key and value and find the javerage?
+
+public static void main(String[] args) {
+        // Create a HashMap to store name-age pairs
+        Map<String, Integer> ageMap = new HashMap<>();
+        ageMap.put("Brian", 21);
+        ageMap.put("Lee", 22);
+        ageMap.put("Cathe", 45);
+
+        // Calculate the sum of ages
+        int sumOfAges = 0;
+        for (Integer age : ageMap.values()) {
+            sumOfAges += age;
+        }
+
+        // Calculate the average age
+        double averageAge = (double) sumOfAges / ageMap.size();
+
+        // Print the average age
+        System.out.println("Average age: " + averageAge);
+		
+12. Multiple catch block
+Try{}
+Catch(exception e){
+Syso(A);
+Catch(Arithmetic exception)
+Syso(B);
+13. The logic of parent and child exception
+
+14. When to use abstract class and when to use interface
+
+15. Why can’t we create the framework with all static methods?
+
+16. Int arr 1,2,3,4,5,7,8,9, Skip 3 and all elements after 3 and then skip 7 and then give some
+
+17. Implement hashmap in the interface and use it in the main
+
+
+18. Remove redundancy for a string.
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class RemoveRedundancy {
+    public static String removeDuplicates(String str) {
+        Set<Character> seen = new HashSet<>();
+        StringBuilder result = new StringBuilder();
+        for (char c : str.toCharArray()) 
+            if (!seen.contains(c)) { 
+                seen.add(c); 
+                result.append(c); 
+            }
+        return result.toString();
+    }
+
+    public static void main(String[] args) {
+        String str = "aabbcdeeff";
+        String unique = removeDuplicates(str);
+        System.out.println("Original: " + str);
+        System.out.println("Unique: " + unique); 
+    }
+}
+
+=====================================================================
+
+
+import java.util.HashMap;
+import java.util.Map;
+
+interface MyInterface {
+    Map<String, String> getHashMap();
+}
+
+class MyClass implements MyInterface {
+
+    @Override
+    public Map<String, String> getHashMap() {
+        Map<String, String> myMap = new HashMap<>();
+        myMap.put("key1", "value1");
+        myMap.put("key2", "value2");
+        myMap.put("key3", "value3");
+        return myMap;
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+        MyInterface obj = new MyClass(); 
+        Map<String, String> hashMap = obj.getHashMap();
+
+        // Access and print the values
+        for (Map.Entry<String, String> entry : hashMap.entrySet()) {
+            System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
+        }
+    }
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class SkipElements {
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5, 7, 8, 9};
+        List<Integer> result = new ArrayList<>();
+
+        for (int num : arr) {
+            if (num == 3) {
+                break; 
+            }
+            if (num != 7) {
+                result.add(num);
+            }
+        }
+
+        System.out.println("Remaining elements: " + result); 
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+(//div[@id='navbar']/div)[3]//a
+
+
+//locator//parent::div//
+
+try{
+WebElement we= new WebElement(By.xpath("//div/a"));
+Str str1= we.getText();
+}
+
+if(str1.equ('STR'))
+return true;
+else
+retrun false;
+catch(Exception e)
+{
+
+}
+
+driver.findElemnet(By.)
+
+/////////////////////////////////////////
+@test
+public static void main(String str[]){
+
+Login.login();
+}
+
+//////////
+
+class login()
+{
+  driver.findElement(UserId);
+   driver.findElement(password);
+    driver.findElement(Logind);
+  
+}
+
+////////////////////////////
+
+class findElement(){
+
+findElement fe = //UserId;
+return UserId;
+
+findElement fe = //password;
+return password;
+
+findElement fe = //login;
+return Logind;
+}
+
+//////////////////////////////////////////////////////
+tetng
+
+
+public int x = 10;
+public int final x = 100;
+public static final int x = 101;
+
+======================================================
+
+Exception in thread "main" org.openqa.selenium.SessionNotCreatedException: Could not start a new session. 
+Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: Error executing adbExec. Original error:
+ 'Command 'C:\\Users\\kanika.chaudhary\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s 127.0.0.1\:5555 install -r C:\\Users\\kanika.chaudhary\\.appium\\node_modules\\appium-uiautomator2-driver\\node_modules\\appium-uiautomator2-server\\apks\\appium-uiautomator2-server-debug-androidTest.apk' exited with code 1';
+ Command output: adb: failed to install C:\Users\kanika.chaudhary\.appium\node_modules\appium-uiautomator2-driver\node_modules\appium-uiautomator2-server\apks\appium-uiautomator2-server-debug-androidTest.apk:
+ Failure [INSTALL_FAILED_UPDATE_INCOMPATIBLE: Package io.appium.uiautomator2.server.test signatures do not match previously installed version; ignoring!]
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+protected void swipe(Point start, Point end, Duration duration) {
+		AppiumDriver d = DriverManager.getDriver();
+		
+		boolean isAndroid = d instanceof AndroidDriver;
+		PointerInput input = new PointerInput(Kind.TOUCH, "finger1");
+		Sequence swipe = new Sequence(input, 0);
+		swipe.addAction(input.createPointerMove(Duration.ZERO, Origin.viewport(), start.x, start.y));
+		swipe.addAction(input.createPointerDown(MouseButton.LEFT.asArg()));
+		if (isAndroid) {
+			duration = duration.dividedBy(ANDROID_SCROLL_DIVISOR);
+		} else {
+			swipe.addAction(new Pause(input, duration));
+			duration = Duration.ZERO;
+		}
+		swipe.addAction(input.createPointerMove(duration, Origin.viewport(), end.x, end.y));
+		swipe.addAction(input.createPointerUp(MouseButton.LEFT.asArg()));
+		d.perform(ImmutableList.of(swipe));
+	}
+	
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+	
+	
+	Rupali Sachdeva  to  Everyone 12:19 PM
+Write xpath for all states after Punjab
+<ui id='state'>
+<li>Delhi</li>
+<li>Punjab</li>
+<li>Haryana</li>
+<li>UP</li>
+<li>Maharashtra</li>
+<li>Karnataka</li>
+</ui>
+
+(// ui[@id ='state']//li)[2]/following-sibling::li
+
+
+<parent window><spath>
+
+<child window><xpath>
+
+drag n drop method selenium
+
+FileIo by using this 
+
+window().maximum().size;
+
+windowHnadler
+
+
+facebook > 
+
+String response=given().when.respone();
+
+Assert.assertEquals(Response,"Expected data");
+
+
+maven > pom files
+
+github
+
+git rebase ..?
+
+branch > main
+
+
+git checkout -b "kanika"
+git commit - m "new feature"
+git pull 
+git stage 
+git commit -m ""
+git push 
+
+git add .
+
+
+CI/CD pipeline
+configuration ----> it will run --> timing --> 24 hr clock
+
+
+Employees  
+---------  
+EmployeeID  |  Name        |  Department  |  Salary  
+-----------------------------------------------------  
+1           |  Alice       |  HR          |  70000  
+2           |  Bob         |  IT          |  80000  
+3           |  Charlie     |  IT          |  75000  
+4           |  David       |  HR          |  72000
+
+
+Select * from Department where Salary = '80000';
+==============================================================
+==============================================================
+==============================================================
+1- data creation 
+2- timelines for Map/Pie chart with list
+3- Automation script
+	2-
+	
+	====================================================
+	
+	TestNG
+
+POM model, maven , 3 sub categories
+
+business class - common  method 
+base test - driver - common 
+Test class - test method
+Repository class - web clas - web elements - 
+
+
+XML - test cases methods  - both
+
+System.setProperty("webdriver.chrome")
+Webdriver driver = new ChromeDriver ();- Base Test
+driver.get("www.facebook.com");
+
+
+Public Class Login extends Base {
+
+WebElement we = new WebElement();
+
+public static void loginTest()
+{ 
+	username.sendkeys("Kanika");
+	password.sendkeys("Password");
+	login.click();
+	
+}
+
+}
+
+Public class WebElement () extends login{
+
+WebElement username = driver.findElement("user");
+WebElement password = driver.findElement("password");
+WebElement login = driver.findElement("login");
+
+}
+
+static method - 
+
+
+====================================================
+
+Shadow DOM elements
+
+JavasciptExecutor js=(JavasciptExecutor) driver;
+WebElement we = (WebElement) js.executescipt("agument.shadowRoot", xpathofShadowElement);
+
+======================================
+WebDriver driver = new chromeDriver();
+
+==============================
+rest assured 
+POM fole 
+version 
+
+base class 
+
+RestAssured.Baseuri= "https://";
+
+Response 
+
+====================================================================
+
+public class PostRequest{
+		public static void main(String[] args)
+		{
+			
+			RestAssured.baseURI ="https://facebook.com";
+			
+			String requestBody="
+			//json data here 
+			
+			"
+			
+			
+			Response response =given().header("Content","application/json").body(requestBody)
+			when().
+			post("/post")
+			.then()
+			.statusCode(200);
+		
+		
+		}
+}
+
+======================================================================
+Serialization 
+
+java- json
+
+User user = new User("Kanika","QA");
+
+Response response =given().header("Content","application/json").body(user)
+			when().
+			post("/post")
+			.then()
+			.statusCode(200).response();
+			
+			syson(response);
+			
+			
+======================================================================
+			
+https://www.icc-cricket.com/rankings/batting/mens/odi
+
+
+======================================================================			
+			
+web selenium java
+rest assured 
+appium java
+TDD/BDD and page object model framework
+Postman with API
+test planning, test design, test strategy and test execution
+java
+Basic questions from testing domain such as re-testing and regression testing, severity and priority etc.
+How to print 1 when in put is 0 and print 0 when input is 1 without using conditional
+Difference between Get and post methods
+Guess the important test scenarios , given scenarios
+Feature definition and step definition
+Explicit wait and Implicit wait
+Different response codes in API
+
+
+
+
+
+
+
+
+
+
+
+
+
+
